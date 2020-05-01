@@ -1,4 +1,9 @@
 # Docker
+
+Requirements:
+* Docker-ce 
+* httpd apache webserver
+
 Steps to use this in your machine:
 * create a new directory for example "myproject"
 * Download the docker-compose.yum file into the directory 
