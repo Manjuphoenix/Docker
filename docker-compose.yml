@@ -1,0 +1,27 @@
+version: '3'
+
+ services:
+   dbos:
+     image: mysql:5.7
+     volumes:
+       - mysql_storage_new:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: rootpass
+       MYSQL_USER: manju
+       MYSQL_PASSWORD: michelle
+       MYSQL_DATABASE: mydb
+     app:
+       image: nextcloud
+       ports: 
+         - 8080:80
+       links:
+         - dbos
+       volumes:
+         - nextcloud:/var/www/html
+       restart:
+         always
+        
+volumes:
+  nextcloud:
+  mysql_storage_new:
